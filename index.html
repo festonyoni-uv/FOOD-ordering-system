@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#FF6B35">
+  <meta name="description" content="Fefe Food - Order delicious meals online. Fresh, fast, and tasty food delivery.">
+  <title>Fefe Food - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script defer src="header-loader.js"></script>
+  <script defer src="navigation.js"></script>
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.85), rgba(212, 85, 43, 0.85)), 
+                  url('https://images.unsplash.com/photo-1495636136069-643c1f8589a0?w=1200&q=80') center/cover;
+      color: white;
+      padding: 120px 24px;
+      text-align: center;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin: 0 0 16px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin: 0 0 32px;
+      opacity: 0.98;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      padding: 14px 32px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #FF6B35;
+    }
+
+    .btn-primary:hover {
+      background: #f0f0f0;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-divider {
+      height: 80px;
+      background: linear-gradient(180deg, transparent, #f9fafb);
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 20px;
+        min-height: 400px;
+      }
+
+      .hero-content h1 {
+        font-size: 32px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-btn {
+        width: 100%;
+      }
+    }
+    .modern-header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #FF6B35;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .header-logo .logo-icon {
+      font-size: 28px;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .header-nav.mobile-nav {
+      display: none;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .header-nav a:hover {
+      color: #FF6B35;
+    }
+
+    .header-auth {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .auth-link {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .login-link:hover, .register-link:hover {
+      background: rgba(255, 107, 53, 0.1);
+      color: #FF6B35;
+    }
+
+    .logout-link {
+      background: #FF6B35;
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+
+    .logout-link:hover {
+      background: #D4552B;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger {
+      width: 24px;
+      height: 3px;
+      background: #111;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .header-nav.desktop-nav {
+        display: none;
+      }
+
+      .header-nav.mobile-nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        padding: 16px 24px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-nav.mobile-nav.active {
+        display: flex;
+      }
+
+      .header-nav.mobile-nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+
+      .mobile-menu-toggle.active .hamburger:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .mobile-menu-toggle.active .hamburger:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle.active .hamburger:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .header-auth {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .auth-link {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>🍽️ Karibu Fefe Food</h1>
+        <p>Order delicious meals from our restaurant — fresh, fast, and full of flavour. Chakula cha nyumbani delivered to you!</p>
+        <div class="hero-buttons">
+          <a href="register.html" class="hero-btn btn-primary">📝 Jisajili - Register</a>
+          <a href="login.html" class="hero-btn btn-secondary">🔓 Ingia - Sign In</a>
+          <a href="menu.html" class="hero-btn btn-secondary">🍽️ Tazama Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="hero-divider"></div>
+
+    <section class="gallery">
+      <h2>Popular Dishes</h2>
+      <div class="grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=900&q=80&auto=format&fit=crop" alt="Burger with fries">
+          <figcaption>Juicy Burger</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=900&q=80&auto=format&fit=crop" alt="Pasta dish">
+          <figcaption>Classic Pasta</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=900&q=80&auto=format&fit=crop" alt="Sushi plate">
+          <figcaption>Fresh Sushi</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=900&q=80&auto=format&fit=crop" alt="Salad bowl">
+          <figcaption>Healthy Salad</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Featured Specialties Section -->
+    <section class="specialties">
+      <h2>Vyakula vya Kuchagua</h2>
+      <div class="specialty-grid">
+        <article class="specialty-card">
+          <div class="specialty-image">
+            <img src="https://images.unsplash.com/photo-1630384478776-f2dff95ee731?w=500&q=80&auto=format&fit=crop" alt="Pilau dish">
+          </div>
+          <div class="specialty-content">
+            <h3>Pilau ya Kuku</h3>
+            <p class="specialty-desc">Pilau aliyoandaliwa kwa karibu kwa njia ya jadi. Viungo vya ajabu na kuku safi.</p>
+            <div class="specialty-rating">
+              ⭐⭐⭐⭐⭐ <span class="rating-count">(156 reviews)</span>
+            </div>
+            <p class="specialty-price">TSh 3,500</p>
+          </div>
+        </article>
+
+        <article class="specialty-card">
+          <div class="specialty-image">
+            <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=500&q=80&auto=format&fit=crop" alt="Nyama choma">
+          </div>
+          <div class="specialty-content">
+            <h3>Nyama Choma Premium</h3>
+            <p class="specialty-desc">Nyama ile inakamatwa mwenyewe na kukaangwa kwa moto safi. Kama nyumbani!</p>
+            <div class="specialty-rating">
+              ⭐⭐⭐⭐⭐ <span class="rating-count">(203 reviews)</span>
+            </div>
+            <p class="specialty-price">TSh 12,000</p>
+          </div>
+        </article>
+
+        <article class="specialty-card">
+          <div class="specialty-image">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80&auto=format&fit=crop" alt="Chips and fish">
+          </div>
+          <div class="specialty-content">
+            <h3>Chipsi na Samaki</h3>
+            <p class="specialty-desc">Samaki safi wa bahari, mkate mzuri na chipsi yenye salt. Kimbile!</p>
+            <div class="specialty-rating">
+              ⭐⭐⭐⭐ <span class="rating-count">(189 reviews)</span>
+            </div>
+            <p class="specialty-price">TSh 6,500</p>
+          </div>
+        </article>
+
+        <article class="specialty-card">
+          <div class="specialty-image">
+            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&q=80&auto=format&fit=crop" alt="Biryani dish">
+          </div>
+          <div class="specialty-content">
+            <h3>Biryani ya Nyama</h3>
+            <p class="specialty-desc">Biryani inayokaanga kwa spices ndogo-ndogo. Aroma nzuri sana!</p>
+            <div class="specialty-rating">
+              ⭐⭐⭐⭐⭐ <span class="rating-count">(178 reviews)</span>
+            </div>
+            <p class="specialty-price">TSh 9,000</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CRUD Operations Section -->
+    <section style="background: linear-gradient(135deg, #fff7f2, #fff3e8); padding: 60px 24px; margin-top: 60px; border-radius: 12px;">
+      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 28px; color: #FF6B35; margin: 0 0 16px;">⚙️ Admin Tools</h2>
+        <p style="color: #6b7280; margin: 0 0 32px; font-size: 16px;">Manage menu items, orders, and customer data</p>
+        
+        <a href="crud-operations.html" style="
+          display: inline-block;
+          background: linear-gradient(135deg, #FF6B35, #D4552B);
+          color: white;
+          padding: 16px 40px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 16px;
+          transition: all 0.3s ease;
+          box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        " 
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 53, 0.4)';"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 53, 0.3)';">
+          📊 CRUD Operations
+        </a>
+
+        <div style="margin-top: 24px; padding: 16px; background: white; border-radius: 8px; border-left: 4px solid #FF6B35;">
+          <p style="margin: 0; color: #333; font-size: 14px;">
+            <strong>Admin Access:</strong> Create, Read, Update, Delete menu items and manage orders from this panel.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div style="text-align: center;">
+        <p style="margin: 0 0 16px; font-size: 16px; font-weight: 600; color: #FF6B35;">
+          🍽️ Fefe Food
+        </p>
+        <p style="margin: 0 0 20px; color: #666; font-size: 14px;">
+          Delicious meals delivered to your door. Order now!
+        </p>
+        <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;">
+          <a href="about.html" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s;">About Us</a>
+          <a href="contact.html" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s;">Contact</a>
+          <a href="crud-operations.html" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s;">Admin</a>
+        </div>
+        <p style="margin: 0; font-size: 12px; color: #999; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 16px;">
+          © 2026 Fefe Food. All rights reserved. | Modern Food Delivery Service
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="auth-guard.js"></script>
+</body>
+</html>
