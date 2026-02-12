@@ -1,2 +1,0 @@
-# FOOD-ordering-system
-festo
